@@ -1,5 +1,7 @@
 package com.thacker.filesplit.split;
 
+import com.thacker.filesplit.resources.Strings;
+
 import java.io.*;
 
 public class Split {
@@ -43,7 +45,7 @@ public class Split {
             oos.writeObject(fi);
             oos.close();
         } catch (IOException e) {
-            throw new FileNotFoundException("Can not create chunk file");   //FIX
+            throw new FileNotFoundException(Strings.fileNotCreated);   //FIX
         }
     }
 
@@ -78,7 +80,7 @@ public class Split {
                 chunkNo++;
             }
         } catch (IOException e) {
-            System.out.println("READ/WRITE ERROR writeChunks");
+            System.out.println(Strings.chunkWriteError);
             e.printStackTrace();
         }
     }

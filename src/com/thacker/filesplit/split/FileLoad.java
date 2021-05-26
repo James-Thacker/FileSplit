@@ -1,5 +1,7 @@
 package com.thacker.filesplit.split;
 
+import com.thacker.filesplit.resources.Strings;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -16,7 +18,7 @@ public class FileLoad {
     public static File load(String path) throws FileNotFoundException {
         File file = new File(path);
         if(!file.exists()){
-            throw new FileNotFoundException("Source file not found");
+            throw new FileNotFoundException(Strings.sourceNotFound);
         }
         return file;
     }
